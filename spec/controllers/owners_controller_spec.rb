@@ -90,7 +90,7 @@ describe "Owners Controller" do
     end
 
     it "edit's the owner's pets with an existing pet" do
-      @shaggy = Pet.create(:name => "Shaggy")
+      @shaggy = Pet.create(:name => "Shaggy", :owner_id => @owner.id)
       visit "/owners/#{@owner.id}/edit"
       check(@shaggy.id)
       click_button "Update Owner"
